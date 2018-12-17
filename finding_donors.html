@@ -11813,7 +11813,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11999,7 +11999,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Total number of records</span>
@@ -12093,7 +12093,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Split the data into features and target label</span>
@@ -12143,7 +12143,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Log-transform the skewed features</span>
@@ -12194,7 +12194,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import sklearn.preprocessing.StandardScaler</span>
@@ -12388,7 +12388,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: One-hot encode the &#39;features_log_minmax_transform&#39; data using pandas.get_dummies()</span>
@@ -12458,7 +12458,7 @@ Name: income, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
@@ -12474,13 +12474,13 @@ Name: income, dtype: int64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a2e72d630&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10fe9a5f8&gt;</pre>
 </div>
 
 </div>
@@ -12516,7 +12516,7 @@ Name: income, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import train_test_split</span>
@@ -13091,8 +13091,12 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong><br>
-Out of the 3 models, SVM has very high training and testing time. Also, it's scores are not that impressive. Random Forest and Gradient Boosting perform quite similar. However, on closer look, we can see that Random Forest has high f-score during training (0.99) but low during testing (0.62) by visible margin (difference of 0.37). Gradient Boosting on the other hand performs similar during testing as well as training. It also has highest f-scores during testing of around 0.7. So, as per above observations, Gradient Boosting looks to be most promising model.</p>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>Random Forest and Gradient Boosting perform quite similar. However, on closer look, we can see that Random Forest has high f-score during training (0.99) but low during testing (0.62). High score on training data and low score on test data signals that maybe RandomForest is overfitting on the training data. </li>
+<li>Gradient Boosting on the other hand performs similar during testing as well as training. It also has highest f-scores during testing of around 0.7. That's why I think GradientBoosting is suitable for this problem.</li>
+<li>Out of the 3 models, SVM has very high training and testing time. While other two have almost similar training anf testing time.</li>
+</ol>
 
 </div>
 </div>
@@ -13115,9 +13119,9 @@ Out of the 3 models, SVM has very high training and testing time. Also, it's sco
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
-Gradient Boosting is a machine leanring technique for classification and regression where we try to form an ensemble or a group of learners where each may individually be weak learner on the full data but together they oversome each other's drawbacks and make the group or ensemble strong.</p>
-<p>In this method, we first start with simple learners and analyze the error. This error helps us understand which data is difficult for our current learners to fit. Then we add more learners, but now focus is to help them learn the data points which we earlier found hard to fit. In the end, we combine all of them by giving importance/weightage to each learner.</p>
-<p><a href="http://uc-r.github.io/gbm_regression#idea">Ref</a></p>
+Suppose you are newly appointed Chief Technical Officer of a tech company. You want to review all the projects so you can answer questions raised by founders and investors during annual meeting. It is not possible for you to review and get information about all projects alone. So you call 15 managers under you. You want them to form groups of 3 to analyze a project and be able to answer queries related them in the meeting. So your aim here is to be able to answer maximum of the queries correctly by forming 5 teams of 3 members each.</p>
+<p>The process starts with random guess to queries. Now, you calculate the error and build another team which can reduce this error by maximum. You again calculate error by this new team and form another team to reduce new error and so on. You continue doing this until you get a good combination of 5 teams which can answer most queries correctly.
+<a href="https://www.quora.com/What-is-Gradient-Boosting-Models-and-Random-Forests-using-layman-terms">Ref</a></p>
 
 </div>
 </div>
@@ -13325,7 +13329,7 @@ Final F-score on the testing data: 0.7546
 <p><strong>Answer:</strong></p>
 <ul>
 <li>The optimized model is only slightly better than the unoptimized model.</li>
-<li>The optimized is quite better than naive predictor. Accuracy is much higher. And the metric to be actually considered, i.e f-score, is higher by 0.46 compared to the naive predictor</li>
+<li>The optimized is quite better than naive predictor. Accuracy is much higher. Naive predictor had accuracy of around 0.25 while our optimized model has 0.87. Same goes for f-score, naive predictor had f-score of 0.29 while GBM has f-score of around 0.75.</li>
 </ul>
 
 </div>
@@ -13472,7 +13476,7 @@ F-score on testing data: 0.7564
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Import a supervised learning model that has &#39;feature_importances_&#39;</span>
@@ -13537,8 +13541,7 @@ F-score on testing data: 0.7564
 <p><strong>Answer:</strong></p>
 <ul>
 <li>The 5 important features as per model are quite close to what I predicted with exception of hours-per-week.</li>
-<li>I did not expect hours-per-week to be more important to occupation. Maybe, it is because hours-per-week is directly proportional to income earned. But it makes sense only on combining it with type of occupation. </li>
-<li>As I guessed, captial-loss and capital-gain have high importance. However, it seems ultimately education is the most important factor!</li>
+<li>As per the visualization, I did not expect hours-per-week to be more important than occupation. Maybe, it is because hours-per-week is directly proportional to income earned. But it makes sense only on combining it with type of occupation. As I guessed, captial-loss and capital-gain are important, but not as important a age, which looks like almost twice as important as capital-loss and capital-gain. Age seems to be the driving factor behind income with 0.2 weightage as per the visualization.</li>
 </ul>
 
 </div>
@@ -13629,8 +13632,8 @@ F-score on testing data: 0.6934
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Accuracy is not that greatly affected (~3%). However, f-score has decreased almost by 0.062 i.e around 8%.</li>
-<li>No, I wouldn't consider reducing dataset as that may lead to model overfitting the reduced dataset and not generalizing. Instead, I would opt for faster algorithms like RandomForest.</li>
+<li>Accuracy is not that greatly affected (~3%). However, f-score has decreased almost by 0.062 i.e around 8%. But considering we are now using only 5 features instead of original 103, I think this will make training and predicting quite fast without affecting the accuracy and f-score that much.</li>
+<li>No, I wouldn't consider reducing dataset as that may lead to model overfitting the reduced dataset and not generalizing. I would consider reducing features by doing feature selection. Another method I would opt for is uising faster algorithms like RandomForest.</li>
 </ul>
 
 </div>
